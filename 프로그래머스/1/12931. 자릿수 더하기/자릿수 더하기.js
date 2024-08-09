@@ -1,14 +1,15 @@
 function solution(n)
 {
     let answer = 0;
-    let numToString = String(n)
+    let numToString = toString(n)
     
-    let arr = numToString.split('')
+    numToString.split('')
     
+    let numSplitArr = parseInt(numToString,10);
+    console.log(numSplitArr);
     
-    
-    for(i=0;i<arr.length; i++){
-        answer += parseInt(arr[i]);
+    for(i=0;i<numSplitArr.length; i++){
+        answer += i;
     }
     
     
