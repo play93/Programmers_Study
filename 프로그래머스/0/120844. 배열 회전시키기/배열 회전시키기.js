@@ -1,18 +1,11 @@
 function solution(numbers, direction) {
-    let answer = [];
+    let answer = [...numbers];
     if(direction === "right"){
-        answer.push(numbers[numbers.length-1])
+        let lastNum = answer.pop()
+        answer.unshift(lastNum)
+    }else{
+        let firstNum = answer.shift()
+        answer.push(firstNum)
     }
-    for(let i=0; i<numbers.length-1; i++){
-        if(direction === "right"){
-            answer.push(numbers[i])
-        }else if(direction === "left"){
-            answer.push(numbers[i+1])
-        }
-    }
-    if(direction === "left"){
-        answer.push(numbers[0])
-    }
-    
     return answer;
 }
